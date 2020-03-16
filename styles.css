@@ -132,7 +132,8 @@ p {
 	margin: 0 0 0.5rem 0;
 	color: #5f6982;
 }
-.uploader .btn {
+.uploader .btn,
+#btndownload {
 	display: inline-block;
 	margin: 0.5rem 0.5rem 1rem 0.5rem;
 	clear: both;
@@ -175,13 +176,14 @@ p {
 	/* display: flex;
 	flex-direction: column; */
 }
-#container #ascii.hidden {
+/* #container #ascii.hidden {
 	display: none;
 }
 #container #btndownload.hidden {
 	display: none;
-}
+} */
 canvas {
+	margin: 2em 0 2em 0;
 	border: solid 1px gray;
 	width: 50%;
 	height: 50%;

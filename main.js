@@ -1,7 +1,7 @@
 console.log("This is connected");
 // File Upload
 //
-function ekUpload() {
+function myUploader() {
 	function Init() {
 		console.log("Upload Initialised");
 
@@ -161,15 +161,7 @@ function ekUpload() {
 		document.getElementById("file-drag").style.display = "none";
 	}
 }
-ekUpload();
-
-// imgToAscii({
-// 	canvas: document.getElementById("ascii"),
-// 	image:
-// 		"https://cdn.glitch.com/b75055dd-03c2-47e5-9f5d-7923ac439cc1%2Fdarnell.png?v=1584322716006",
-// 	fontSize: 10,
-// 	spaceing: 8
-// });
+myUploader();
 
 const map = (s, a1, a2, b1, b2) => b1 + ((s - a1) * (b2 - b1)) / (a2 - a1);
 
@@ -178,14 +170,10 @@ function imgToAscii(config) {
 	original.crossOrigin = "Anonymous";
 	original.onload = function() {
 		var canvas = document.getElementById("ascii");
-		// context = canvas.getContext("2d");
-		let dataCtx = document.createElement("canvas").getContext("2d");
+		dataCtx = document.createElement("canvas").getContext("2d");
 		config.canvas.width = dataCtx.canvas.width = this.width;
 		config.canvas.height = dataCtx.canvas.height = this.height;
 		dwn = document.getElementById("btndownload");
-
-		// canvas = document.getElementById("ascii"),
-		// context = canvas.getContext("2d");
 
 		dataCtx.drawImage(
 			this,
@@ -215,24 +203,24 @@ function imgToAscii(config) {
 		}
 
 		// console.log(canvas.toDataURL());
-		var myImage = canvas.toDataURL();
-		downloadURI(myImage, "MaSimulation.png");
+
 		// Event handler for download
 		// console.log(config.image);
-		// dwn.onclick = function() {
-		// 	downloadAscii(config.image);
-		// };
+		dwn.onclick = function() {
+			var myAscii = canvas.toDataURL();
+			downloadAscii(myAscii, "myAscii.png");
+		};
 	};
 
 	original.src = config.image;
-	dwn = document.getElementById("btndownload");
-	dwn.onclick = function() {
-		downloadAscii(original.src);
-	};
+	// dwn = document.getElementById("btndownload");
+	// dwn.onclick = function() {
+	// 	downloadAscii(original.src);
+	// };
 	console.log(original.src);
 }
 
-function downloadURI(uri, name) {
+function downloadAscii(uri, name) {
 	var link = document.createElement("a");
 
 	link.download = name;
@@ -242,133 +230,3 @@ function downloadURI(uri, name) {
 	//after creating link you should delete dynamic link
 	//clearDynamicLink(link);
 }
-
-// Initializing
-// window.onload = function() {
-// 	var dwn = document.getElementById("btndownload"),
-// 		canvas = document.getElementById("ascii"),
-// 		context = canvas.getContext("2d");
-
-// 	// Drawing a circle
-// 	var centerX = canvas.width / 2;
-// 	var centerY = canvas.height / 2;
-// 	var radius = 70;
-// 	context.beginPath();
-// 	context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-// 	context.fillStyle = "rgba(0,200,0, .7)";
-// 	context.fill();
-// 	context.lineWidth = 2;
-// 	context.strokeStyle = "black";
-// 	context.stroke();
-
-// 	// Drawing a rect
-// 	context.beginPath();
-// 	context.rect(15, 50, 100, 100);
-// 	context.fillStyle = "rgba(255,255,0, .7)";
-// 	context.fill();
-// 	context.lineWidth = 2;
-// 	context.strokeStyle = "black";
-// 	context.stroke();
-
-// 	// Event handler for download
-// 	dwn.onclick = function() {
-// 		download(canvas, "myimage.png");
-// 	};
-// };
-
-// Source from:  http://stackoverflow.com/questions/18480474/how-to-save-an-image-from-canvas
-
-function downloadAscii(someData) {
-	var img = new Image();
-	img.onload = function() {
-		var canvas = document.createElement("canvas");
-		canvas.width = img.width;
-		canvas.height = img.height;
-		var ctx = canvas.getContext("2d");
-		ctx.drawImage(img, 0, 0);
-
-		var base64Image = getBase64Image(canvas);
-		downloadURI(base64Image, "image.png");
-	};
-	img.setAttribute("crossOrigin", "anonymous");
-	img.src = someData;
-}
-
-function getBase64Image(canvas) {
-	var dataURL = canvas.toDataURL("image/png");
-	return dataURL;
-}
-
-function downloadURI(uri, name) {
-	// IE10+ : (has Blob, but not a[download] or URL)
-	if (navigator.msSaveBlob) {
-		const blob = dataURItoBlob(uri);
-		return navigator.msSaveBlob(blob, name);
-	}
-	const link = document.createElement("a");
-	link.download = name;
-	link.href = uri;
-	document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
-}
-
-function dataURItoBlob(dataurl) {
-	const parts = dataurl.split(","),
-		mime = parts[0].match(/:(.*?);/)[1];
-	if (parts[0].indexOf("base64") !== -1) {
-		const bstr = atob(parts[1]);
-		let n = bstr.length;
-		const u8arr = new Uint8Array(n);
-
-		while (n--) {
-			u8arr[n] = bstr.charCodeAt(n);
-		}
-		return new Blob([u8arr], { type: mime });
-	} else {
-		const raw = decodeURIComponent(parts[1]);
-		return new Blob([raw], { type: mime });
-	}
-}
-
-/* Canvas Donwload */
-// function download(canvas, filename) {
-// 	console.log("We are in");
-// 	/// create an "off-screen" anchor tag
-// 	var lnk = document.createElement("a"),
-// 		e;
-
-// 	/// the key here is to set the download attribute of the a tag
-// 	lnk.download = filename;
-
-// 	/// convert canvas content to data-uri for link. When download
-// 	/// attribute is set the content pointed to by link will be
-// 	/// pushed as "download" in HTML5 capable browsers
-// 	// lnk.href = canvas.toDataURL("image/png;base64");
-
-// 	/// create a "fake" click-event to trigger the download
-// 	if (document.createEvent) {
-// 		e = document.createEvent("MouseEvents");
-// 		e.initMouseEvent(
-// 			"click",
-// 			true,
-// 			true,
-// 			window,
-// 			0,
-// 			0,
-// 			0,
-// 			0,
-// 			0,
-// 			false,
-// 			false,
-// 			false,
-// 			false,
-// 			0,
-// 			null
-// 		);
-
-// 		lnk.dispatchEvent(e);
-// 	} else if (lnk.fireEvent) {
-// 		lnk.fireEvent("onclick");
-// 	}
-// }
