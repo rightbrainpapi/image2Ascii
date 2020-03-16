@@ -176,12 +176,12 @@ p {
 	/* display: flex;
 	flex-direction: column; */
 }
-/* #container #ascii.hidden {
+#container #ascii.hidden {
 	display: none;
 }
 #container #btndownload.hidden {
 	display: none;
-} */
+}
 canvas {
 	margin: 2em 0 2em 0;
 	border: solid 1px gray;

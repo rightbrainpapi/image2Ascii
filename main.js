@@ -73,24 +73,16 @@ function myUploader() {
 				file
 			);
 			// I'll need to pass this to the converter
-			imgURL = URL.createObjectURL(file);
-			// console.log(imgURL);
+			// imgURL = URL.createObjectURL(file);
 
 			imgToAscii({
 				canvas: document.getElementById("ascii"),
-				image: imgURL,
+				image: src,
 				fontSize: 10,
 				spaceing: 8
 			});
 
-			// dwn = document.getElementById("btndownload");
-
-			// // Event handler for download
-			// dwn.onclick = function() {
-			// 	downloadAscii(imgURL);
-			// };
-
-			// document.getElementById("file-ascii").classList.remove("hidden");
+			setTimeout(showDownloader, 1000);
 		} else {
 			document.getElementById("file-image").classList.add("hidden");
 			document.getElementById("notimage").classList.remove("hidden");
@@ -202,21 +194,16 @@ function imgToAscii(config) {
 			ctx.fillText(char, x * config.spaceing, y * config.spaceing);
 		}
 
-		// console.log(canvas.toDataURL());
-
 		// Event handler for download
-		// console.log(config.image);
 		dwn.onclick = function() {
 			var myAscii = canvas.toDataURL();
 			downloadAscii(myAscii, "myAscii.png");
+			setTimeout(hideDownloader, 3000);
 		};
 	};
 
 	original.src = config.image;
-	// dwn = document.getElementById("btndownload");
-	// dwn.onclick = function() {
-	// 	downloadAscii(original.src);
-	// };
+
 	console.log(original.src);
 }
 
@@ -229,4 +216,14 @@ function downloadAscii(uri, name) {
 	link.click();
 	//after creating link you should delete dynamic link
 	//clearDynamicLink(link);
+}
+
+function showDownloader() {
+	document.getElementById("ascii").classList.remove("hidden");
+	document.getElementById("btndownload").classList.remove("hidden");
+}
+
+function hideDownloader() {
+	document.getElementById("ascii").classList.add("hidden");
+	document.getElementById("btndownload").classList.add("hidden");
 }
