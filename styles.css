@@ -154,3 +154,9 @@ p {
 	border-color: #26cfdb;
 	cursor: pointer;
 }
+canvas {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
