@@ -154,9 +154,39 @@ p {
 	border-color: #26cfdb;
 	cursor: pointer;
 }
-canvas {
+/* canvas {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+} */
+
+#container {
+	/* width: 200px;
+	height: 200px; */
+	/* background: green; */
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-between;
+	/* display: flex;
+	flex-direction: column; */
+}
+#container #ascii.hidden {
+	display: none;
+}
+#container #btndownload.hidden {
+	display: none;
+}
+canvas {
+	border: solid 1px gray;
+	width: 50%;
+	height: 50%;
+	/* margin-bottom: 10px; */
+	align-self: center;
+
+	/* display: block; */
 }

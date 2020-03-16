@@ -10,8 +10,8 @@
 	<body>
 		<h2>Image to Ascii</h2>
 		<p class="lead">No Plugins <b>Just Javascript</b></p>
-
-		<section>
+		<div id="container">
+			<!-- <section> -->
 			<form id="file-upload-form" class="uploader">
 				<input
 					id="file-upload"
@@ -38,9 +38,15 @@
 					</div>
 				</label>
 			</form>
-			<canvas id="ascii"></canvas>
-		</section>
-		<!-- Upload  -->
+			<!-- <canvas></canvas> -->
+			<!-- </section> -->
+			<!-- Upload  -->
+
+			<canvas id="ascii" class="hidden" width="200" height="200"></canvas>
+			<div>
+				<button id="btndownload" class="hidden">Download</button>
+			</div>
+		</div>
 	</body>
 	<script src="main.js"></script>
 </html>
