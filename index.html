@@ -4,26 +4,35 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 		<title>Image 2 Ascii</title>
 	</head>
 	<body>
-		<div class="container">
-			<h1>
-				Image 2 Ascii
-				<small>with preview</small>
-			</h1>
-			<div class="avatar-upload">
-				<div class="avatar-edit">
-					<input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
-					<label for="imageUpload"></label>
+		<h2>Image to Ascii</h2>
+		<p class="lead">No Plugins <b>Just Javascript</b></p>
+
+		<!-- Upload  -->
+		<form id="file-upload-form" class="uploader">
+			<input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+			<label for="file-upload" id="file-drag">
+				<img id="file-image" src="#" alt="Preview" class="hidden" />
+				<div id="start">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					<div>Select a file or drag here</div>
+					<div id="notimage" class="hidden">Please select an image</div>
+					<span id="file-upload-btn" class="btn btn-primary"
+						>Select a file</span
+					>
 				</div>
-				<div class="avatar-preview">
-					<div
-						id="imagePreview"
-						style="background-image: url(https://cdn.glitch.com/b75055dd-03c2-47e5-9f5d-7923ac439cc1%2Fdarnell.png?v=1584322716006);"
-					></div>
+				<div id="response" class="hidden">
+					<div id="messages"></div>
+					<progress class="progress" id="file-progress" value="">
+						<span>0</span>%
+					</progress>
 				</div>
-			</div>
-		</div>
+			</label>
+		</form>
 	</body>
+	<script src="main.js"></script>
 </html>
