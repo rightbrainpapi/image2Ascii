@@ -1,4 +1,4 @@
-# Image 2 Ascii
+# My Ascii Photo
 
 <!--
 triming a extension
