@@ -23,7 +23,9 @@ body {
 	align-items: center;
 	/* justify-content: flex-end; */
 	/* flex-direction: row-reverse; */
-	width: 600px;
+	/* width: 600px; */
+	width: 100%;
+	max-width: 600px;
 	align-self: center;
 	justify-content: space-evenly;
 	height: 4em;
