@@ -155,12 +155,6 @@ p {
 	border-color: #26cfdb;
 	cursor: pointer;
 }
-/* canvas {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-} */
 
 #container {
 	/* width: 200px;
@@ -180,6 +174,14 @@ p {
 	display: none;
 }
 #container #btndownload.hidden {
+	display: none;
+}
+footer {
+	padding: 1rem 0;
+	background: #26cfdb;
+	text-align: center;
+}
+#container #FooterContainer.hidden {
 	display: none;
 }
 canvas {

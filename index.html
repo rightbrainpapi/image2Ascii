@@ -3,13 +3,30 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			type="image/png"
+			href="./public/icons/fav-icon.png"
+		/>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
+
 		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 		<title>Image 2 Ascii</title>
 	</head>
 	<body>
-		<h2>Image to Ascii</h2>
+		<h2>Image 2 Ascii</h2>
 		<p class="lead">No Plugins <b>Just Javascript</b></p>
+		<!-- <a
+			href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+			class="twitter-share-button"
+			data-show-count="false"
+			>Tweet</a
+		>
+		<script
+			async
+			src="https://platform.twitter.com/widgets.js"
+			charset="utf-8"
+		></script> -->
 		<div id="container">
 			<!-- <section> -->
 			<form id="file-upload-form" class="uploader">
@@ -37,6 +54,17 @@
 						</progress>
 					</div>
 				</label>
+				<a
+					href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+					class="twitter-share-button"
+					data-show-count="false"
+					>Tweet</a
+				>
+				<script
+					async
+					src="https://platform.twitter.com/widgets.js"
+					charset="utf-8"
+				></script>
 			</form>
 			<!-- <canvas></canvas> -->
 			<!-- </section> -->
@@ -46,6 +74,22 @@
 			<div>
 				<button id="btndownload" class="hidden">Download</button>
 			</div>
+			<footer id="FooterContainer" class="hidden footerContainer">
+				<a
+					href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+					class="twitter-share-button"
+					data-show-count="false"
+					>Tweet</a
+				>
+				<script
+					async
+					src="https://platform.twitter.com/widgets.js"
+					charset="utf-8"
+				></script>
+				<div class="footer">
+					<!-- Copyright &copy; 2019 | Boqapi Group LLC. -->
+				</div>
+			</footer>
 		</div>
 	</body>
 	<script src="main.js"></script>

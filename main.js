@@ -82,7 +82,7 @@ function myUploader() {
 				spaceing: 8
 			});
 
-			setTimeout(showDownloader, 1000);
+			setTimeout(showDownloader, 500);
 		} else {
 			document.getElementById("file-image").classList.add("hidden");
 			document.getElementById("notimage").classList.remove("hidden");
@@ -180,7 +180,9 @@ function imgToAscii(config) {
 		ctx.fillStyle = "#fff";
 
 		let represenation =
-			"$@B%8&WM#*oahbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^'. ";
+			"$@B%8&WM#*oahbdpqwmZO0Q..............,,@B%8&WM#*oahbdp............cccccccccccc----________************@@@@@@@@@@@@@@@@@@@@@@@@++++++++++++++++===============qwmZO0Q@B%8&WM#*oahbdpqwmZO0Q@B%8&WM#*oahbdpqwmZO0Q,,,,,,,,,,,,,,,,,:::::::::::::;;;;;;;;;;;;;;;;''''''''''''''``````````hgeGKJAKHFLKHQLAKWEF;QJWNLJefw hiuwgbjhfejhvjfwkejhsvhjvsjhsjhgsrggsziuhiuksbrksbksbkrjkfsfwgi4qoifbwsbsbjgugoq74t3y96469757;;akl]]]OOO=N[UU9`V`HHHHHDDKKKEKsjsjsjsjsjkjkewkwelewioewioewouewoewouehqhoiewoeoueouewouewouewouewouewoufwffyfyufuysysdhkuuuduuducccgcggcgcooppppppqqqquuuuuuuuuueeeeegeggggcccccccoooooooooooooooqqoqqoqoqiiiiiiii........,,,,''''00000XPVTCVOICOcvcavcllblsncihighbvjccmzb,xBVNBnNDNLjbksgahjwhoqh]4oq]5o84i20q43y5u349871ty82u9p3hiqoi]qu430e8to3u4t[57t4y8]ncjkjfd%8&WM#*oahbdpqwmZO0Q@B%8&WM#*oahbdpqwmZO0Q@B%8&WM#*oahbdpqwmZO0Q---------------LCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^'. ";
+
+		//"$@B%8&WM#*oahbdpqwmZO0Q..............,,@B%8&WM#*oahbdpqwmZO0Q@B%8&WM#*oahbdpqwmZO0Q@B%8&WM#*oahbdpqwmZO0Q,,,,,,,,,,,,,,,,,:::::::::::::;;;;;;;;;;;;;;;;''''''''''''''``````````hgeGKJAKHFLKHQLAKWEF;QJWNLJefw hiuwgbjhfejhvjfwkejhsvhjvsjhsjhgsrggsziuhiuksbrksbksbkrjkfsfwgi4qoifbwsbsbjgugoq74t3y96469757;;akl]]]OOO=N[UU9`V`HHHHHDDKKKEKsjsjsjsjsjkjkewkwelewioewioewouewoewouehqhoiewoeoueouewouewouewouewouewoufwffyfyufuysysdhkuuuduuducccgcggcgcooppppppqqqquuuuuuuuuueeeeegeggggcccccccoooooooooooooooqqoqqoqoqiiiiiiii........,,,,''''00000XPVTCVOICOcvcavcllblsncihighbvjccmzb,xBVNBnNDNLjbksgahjwhoqh]4oq]5o84i20q43y5u349871ty82u9p3hiqoi]qu430e8to3u4t[57t4y8]ncjkjfd%8&WM#*oahbdpqwmZO0Q@B%8&WM#*oahbdpqwmZO0Q@B%8&WM#*oahbdpqwmZO0Q---------------LCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^'. ");
 
 		for (let i = 0, ii = 0; i < data.length; i += 4, ii++) {
 			let x = ii % this.width;
@@ -221,9 +223,28 @@ function downloadAscii(uri, name) {
 function showDownloader() {
 	document.getElementById("ascii").classList.remove("hidden");
 	document.getElementById("btndownload").classList.remove("hidden");
+
+	// Show the copyright
+	document.getElementById("FooterContainer").classList.remove("hidden");
 }
 
 function hideDownloader() {
 	document.getElementById("ascii").classList.add("hidden");
 	document.getElementById("btndownload").classList.add("hidden");
+
+	// Show the copyright
+	document.getElementById("FooterContainer").classList.add("hidden");
+
+	// Show the uploader
+	document.getElementById("start").classList.remove("hidden");
 }
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////// Plugging Footer /////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+var year = new Date().getFullYear();
+var date = `Copyright &copy; ${year} | Rightbrainpapi.`;
+document.getElementsByClassName("footer")[0].innerHTML = date;
