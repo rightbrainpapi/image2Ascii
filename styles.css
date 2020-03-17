@@ -17,7 +17,7 @@ body {
 	flex-direction: column;
 }
 .topnav {
-	overflow: hidden;
+	/* overflow: hidden; */
 	background-color: #26cfdb;
 	display: flex;
 	align-items: center;

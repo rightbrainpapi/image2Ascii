@@ -204,14 +204,14 @@ function imgToAscii(config, origName) {
 		// Event handler for download
 		dwn.onclick = function() {
 			var myAscii = canvas.toDataURL();
-			downloadAscii(myAscii, `my${origName}Ascii.png`);
+			downloadAscii(myAscii, `myAscii${origName}.png`);
 			setTimeout(hideDownloader, 3000);
 		};
 	};
 
 	original.src = config.image;
 
-	console.log(original.src);
+	// console.log(original.src);
 }
 
 function downloadAscii(uri, name) {
