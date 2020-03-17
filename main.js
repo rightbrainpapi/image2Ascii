@@ -74,13 +74,18 @@ function myUploader() {
 			);
 			// I'll need to pass this to the converter
 			// imgURL = URL.createObjectURL(file);
+			console.log(file.name);
+			var origName = file.name.replace(/\.[^/.]+$/, "");
 
-			imgToAscii({
-				canvas: document.getElementById("ascii"),
-				image: src,
-				fontSize: 10,
-				spaceing: 8
-			});
+			imgToAscii(
+				{
+					canvas: document.getElementById("ascii"),
+					image: src,
+					fontSize: 10,
+					spaceing: 8
+				},
+				origName
+			);
 
 			setTimeout(showDownloader, 500);
 		} else {
@@ -157,7 +162,7 @@ myUploader();
 
 const map = (s, a1, a2, b1, b2) => b1 + ((s - a1) * (b2 - b1)) / (a2 - a1);
 
-function imgToAscii(config) {
+function imgToAscii(config, origName) {
 	let original = new Image();
 	original.crossOrigin = "Anonymous";
 	original.onload = function() {
@@ -199,7 +204,7 @@ function imgToAscii(config) {
 		// Event handler for download
 		dwn.onclick = function() {
 			var myAscii = canvas.toDataURL();
-			downloadAscii(myAscii, "myAscii.png");
+			downloadAscii(myAscii, `my${origName}Ascii.png`);
 			setTimeout(hideDownloader, 3000);
 		};
 	};
