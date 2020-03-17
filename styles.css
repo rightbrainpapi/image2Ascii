@@ -8,13 +8,70 @@ body,
 }
 html,
 body {
-	height: 100%;
-	text-align: center;
-}
-body {
 	padding: 2rem;
 	background: #f8f8f8;
+	/* width: 100%; */
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
+.topnav {
+	overflow: hidden;
+	background-color: #26cfdb;
+	display: flex;
+	align-items: center;
+	/* justify-content: flex-end; */
+	/* flex-direction: row-reverse; */
+	width: 600px;
+	align-self: center;
+	justify-content: space-evenly;
+}
+
+.topnav a {
+	float: right;
+
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav a.active {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	/* width: 900px; */
+	background-color: #21a6af;
+	color: white;
+}
+
+#tweet {
+	justify-self: stretch;
+}
+#imgRBP {
+	align-self: center;
+	width: 5rem;
+}
+#RBP {
+	justify-self: flex-end;
+	/* align-self: flex-end; */
+	padding-right: 10em;
+}
+#RBP img {
+	width: 3em;
+}
+
+/* body {
+
+} */
 h2 {
 	font-family: "Roboto", sans-serif;
 	font-size: 26px;
