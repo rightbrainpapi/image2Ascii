@@ -26,6 +26,7 @@ body {
 	width: 600px;
 	align-self: center;
 	justify-content: space-evenly;
+	height: 4em;
 }
 
 .topnav a {
@@ -39,8 +40,9 @@ body {
 }
 
 .topnav a:hover {
-	background-color: #ddd;
+	background-color: #ffbc00;
 	color: black;
+	border-radius: 5px;
 }
 
 .topnav a.active {
@@ -49,13 +51,18 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	/* width: 900px; */
-	background-color: #21a6af;
+	/* background-color: #fff; */
 	color: white;
+	height: 3em;
 }
 
-#tweet {
-	justify-self: stretch;
+.topnav a.active:hover {
+	background-color: #fff;
 }
+
+/* #tweet {
+	justify-self: stretch;
+} */
 #imgRBP {
 	align-self: center;
 	width: 5rem;
