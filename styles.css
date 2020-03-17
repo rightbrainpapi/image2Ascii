@@ -31,15 +31,6 @@ body {
 	height: 4em;
 }
 
-@media only screen and (max-width: 300px) {
-	#res,
-	#port {
-		/* width: 100%;
-		max-width: 600px; */
-		visibility: hidden;
-	}
-}
-
 .topnav a {
 	float: right;
 
@@ -268,4 +259,11 @@ canvas {
 	align-self: center;
 
 	/* display: block; */
+}
+
+@media only screen and (max-width: 400px) {
+	.topnav {
+		width: 150%;
+		/* max-width: 600px; */
+	}
 }
